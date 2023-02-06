@@ -18,7 +18,7 @@ export class Question {
 
     get QuestionTemplate() {
         return /*html*/ `
-        <h3>${this.question}</h3>
+        <h3>${appState.posedQuestion}</h3>
         `
     }
 

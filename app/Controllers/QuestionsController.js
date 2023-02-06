@@ -5,7 +5,9 @@ import { Pop } from "../Utils/Pop.js";
 import { setHTML } from "../Utils/Writer.js";
 
 function _drawQuestion() {
-
+    let template = ''
+    template += `<h3>${appState.posedQuestion.question}</h3>`
+    setHTML('question', template)
 }
 
 
@@ -13,11 +15,11 @@ export class QuestionsController {
 
     constructor() {
         this.getQuestions()
-        _drawQuestion()
     }
 
     findQuestion() {
         questionsService.findQuestion()
+        _drawQuestion()
     }
 
     async getQuestions() {

@@ -10,7 +10,7 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Question').Question[]} */
   questions = []
 
-  posedQuestion = ""
+  posedQuestion = {}
 
   askedQuestions = []
 }

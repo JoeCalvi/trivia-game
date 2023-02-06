@@ -17,7 +17,7 @@ class QuestionsService {
         let randomQuestion = questions[randomIndex]
         appState.posedQuestion = randomQuestion
         appState.askedQuestions.push(randomQuestion)
-        console.log(appState.posedQuestion)
+        console.log(appState.askedQuestions)
     }
 }
 
