@@ -10,6 +10,19 @@ function _drawQuestion() {
     setHTML('question', template)
 }
 
+function _drawAnswers() {
+    let template = ''
+    appState.posedQuestion.incorrect_answers.forEach(a => {
+        template += `
+            <h5 class="border border-dark rounded p-2">${a}</h5>
+            `
+    })
+    template += `
+    <h5 class="border border-dark rounded p-2">
+    ${appState.posedQuestion.correct_answer}</h5>`
+    setHTML('answers', template)
+}
+
 
 export class QuestionsController {
 
@@ -20,6 +33,12 @@ export class QuestionsController {
     findQuestion() {
         questionsService.findQuestion()
         _drawQuestion()
+        _drawAnswers()
+    }
+
+    findAnswers() {
+        questionsService.findAnswers()
+        _drawAnswers()
     }
 
     async getQuestions() {

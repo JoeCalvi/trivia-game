@@ -16,13 +16,4 @@ export class Question {
         //                         "King&#039;s Head"]
     }
 
-    get QuestionTemplate() {
-        return /*html*/ `
-        <h3>${appState.posedQuestion}</h3>
-        `
-    }
-
-    get AnswersTemplate() {
-
-    }
 }

@@ -19,6 +19,12 @@ class QuestionsService {
         appState.askedQuestions.push(randomQuestion)
         console.log(appState.askedQuestions)
     }
+
+    findAnswers() {
+        let answer = appState.posedQuestion.correct_answer
+        let wrongAnswers = appState.posedQuestion.incorrect_answers
+        console.log('correct:', answer, 'wrong choices:', wrongAnswers)
+    }
 }
 
 export const questionsService = new QuestionsService();
