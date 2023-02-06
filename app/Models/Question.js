@@ -1,3 +1,4 @@
+import { appState } from "../AppState.js"
 
 
 export class Question {
@@ -16,7 +17,9 @@ export class Question {
     }
 
     get QuestionTemplate() {
-
+        return /*html*/ `
+        <h3>${this.question}</h3>
+        `
     }
 
     get AnswersTemplate() {
