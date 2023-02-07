@@ -1,6 +1,7 @@
 import { appState } from "../AppState.js";
 import { Question } from "../Models/Question.js"
 import { trivia_api } from "./AxiosService.js";
+import { Pop } from "../Utils/Pop.js";
 
 class QuestionsService {
 
@@ -23,7 +24,24 @@ class QuestionsService {
     findAnswers() {
         let answer = appState.posedQuestion.correct_answer
         let wrongAnswers = appState.posedQuestion.incorrect_answers
-        console.log('correct:', answer, 'wrong choices:', wrongAnswers)
+        // console.log('correct:', answer)
+    }
+
+    choosesCorrectAnswer() {
+        Pop.toast('Nice Job!', 'success', 'center', 3000, true)
+    }
+
+    choosesWrongAnswer() {
+        Pop.toast('Not Quite...', 'error', 'center', 3000, true)
+    }
+    get AnswerTemplate(){
+        let positionNumber = Math.floor(Math.random() * 5)
+        console.log(positionNumber)
+        return /*html*/ `
+        <h5 class="border border-dark rounded p-2 order-${positionNumber} pointer" 
+        onclick="app.questionsController.choosesCorrectAnswer()">
+        ${appState.posedQuestion.correct_answer}</h5>
+        `
     }
 }
 
